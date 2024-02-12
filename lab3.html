@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3 - Dynamic Web Page</title>
+    <style>
+        #helpIcon {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #centeredImage {
+            transition: transform 0.5s ease;
+        }
+        h1 {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="pageTitle">Computing Quotes</h1>
+
+    <!-- Exercise 4.10 -->
+    <div>
+        <img src=https://arthistoryschool.com/wp-content/uploads/2023/04/pica.jpg alt="Quote 1" class="quoteImage" onclick="displayQuote(1)">
+        <img src=https://i.ebayimg.com/images/g/NUkAAMXQOT5Q9T08/s-l1200.webp alt="Quote 2" class="quoteImage" onclick="displayQuote(2)">
+        <img src=https://hips.hearstapps.com/hmg-prod/images/janet-reno-9455589-1-402.jpg alt="Quote 3" class="quoteImage" onclick="displayQuote(3)">
+    </div>
+
+    <!-- Exercise 4.11 -->
+    <script>
+        function displayQuote(quoteNumber) {
+            alert("Display Quote " + quoteNumber);
+            // Logic to display the respective quote
+        }
+    </script>
+
+    <!-- Exercise 4.13 -->
+    <div>
+        <img src="https://m.media-amazon.com/images/M/MV5BMzY0Y2YzOTctNTE3Ny00N2E3LWJmZTMtOGE1MzhlNWFiOWJlXkEyXkFqcGdeQXJoYW5uYWg@._V1_QL75_UX500_CR0,0,500,281_.jpg "  alt="Center Image" id="centeredImage" onmouseover="doubleSize()" onmouseout="originalSize()">
+    </div>
+
+    <!-- Exercise 4.15 -->
+    <script>
+        function doubleSize() {
+            document.getElementById("centeredImage").style.transform = "scale(2)";
+        }
+
+        function originalSize() {
+            document.getElementById("centeredImage").style.transform = "scale(1)";
+        }
+    </script>
+
+    <!-- Exercise 4.9 -->
+    <img src=data:image/png;base64,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 alt="Help Icon" id="helpIcon">
+
+    <script>
+        document.getElementById("helpIcon").addEventListener("click", function() {
+            alert("Help icon clicked!");
+        });
+    </script>
+</body>
+</html>
